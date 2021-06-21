@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [currentPage, setCurrentPage] = useState<string>('landing');
+  let companyName = 'Comapny Name';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      {currentPage === 'landing' &&
+        <div className="landing">
+          <div className="nameHeader">
+            <p>{companyName}</p>
+            <p>Web Development</p>
+          </div>
+          <div className="subText">
+            <p>It begins with an idea.</p>
+            <p>Its not enought to look good, your website needs to drive conversions and engage with your audience.</p>
+          </div>
+          <input type="button" className="normalButton" onClick={() => setCurrentPage('main')} value="Take me inside" />
+        </div>
+      }
+
+      {currentPage === 'main' &&
+        <>
+          <p>Main Page</p>
+          <div className='header'>
+            <div className='headerLeft'>
+              <p>{companyName}</p>
+            </div>
+            <div className='headerRight'>
+              <input type='button' value='Request a quote' className='btnReq'/>
+              
+            </div>
+          </div>
+      </>
+    }
+
+
+        </div>
   );
 }
 
-export default App;
+      export default App;
