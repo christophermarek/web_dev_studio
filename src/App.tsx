@@ -4,9 +4,9 @@ import './App.css';
 function App() {
 
   const [currentPage, setCurrentPage] = useState<string>('landing');
-  let companyName = 'Company Name';
+  const companyName = 'Company Name';
 
-  let whatWeDo = {
+  const whatWeDo = {
     title: 'What we do',
     text: [
       'Help you design and build a website for your buisness needs.',
@@ -15,7 +15,7 @@ function App() {
     ]
   }
 
-  let howWeHelp = {
+  const howWeHelp = {
     title: 'How we help you reach more customers',
     text: [
       'Bring your companies website to the front of peoples searches.',
@@ -24,7 +24,7 @@ function App() {
     ]
   }
 
-  let helpYourBuisnessGrow = {
+  const helpYourBuisnessGrow = {
     title: 'Help your buisness grow',
     text: [
       'A strong online prescence is important.',
@@ -46,10 +46,31 @@ function App() {
         )}
 
         {textValues.title === 'Help your buisness grow' &&
-          <input type='button' value='Request a quote' className='btnReq' />
+          <input type='button' value='Request a quote' onClick={() => setCurrentPage('quote')} className='btnReq' />
         }
       </div>
     )
+  }
+
+  const footer = () => {
+
+    return (
+      <div className='footer'>
+        <div className='nameAndDate'>
+          <p>{companyName}</p>
+          <p>2021</p>
+        </div>
+        <div className='contact'>
+          <p>Contact</p>
+          <div className='icons'>
+            <img src="" />
+            <img src="" />
+            <img src="" />
+          </div>
+        </div>
+      </div>
+    )
+
   }
 
   return (
@@ -76,49 +97,71 @@ function App() {
               <p>{companyName}</p>
             </div>
             <div className='headerRight'>
-              <input type='button' value='Request a quote' className='btnReq' />
+              <input type='button' value='Request a quote' onClick={() => setCurrentPage('quote')} className='btnReq' />
             </div>
           </div>
 
           <div className="mainBody">
             <div className='mainleft'>
               {blurb(whatWeDo)}
-
               <div className='imageBox'>
                 <img src="" />
               </div>
-
-              {blurb(howWeHelp)}
+              {blurb(helpYourBuisnessGrow)}
             </div>
 
             <div className='mainRight'>
               <div className='imageBox'>
                 <img src="" />
               </div>
-              {blurb(helpYourBuisnessGrow)}
+              {blurb(howWeHelp)}
               <div className='imageBox'>
                 <img src="" />
               </div>
             </div>
           </div>
 
-          <div className='footer'>
-            <div className='nameAndDate'>
-              <p>{companyName}</p>
-              <p>2021</p>
-            </div>
-            <div className='contact'>
-              <p>Contact</p>
-              <div className='icons'>
-                <img src="" />
-                <img src="" />
-                <img src="" />
-              </div>
-            </div>
-          </div>
+          {footer()}
         </>
       }
+      {currentPage === 'quote' &&
+        <>
+          <div className='contactTop'> </div>
 
+          <div className='contactBody'>
+            <p>Contact Us to request a quote:</p>
+            <div className="what you needBox">
+              <p>Describe what you need</p>
+              <input type='textarea' />
+              <div className='sendReq'>
+                <input type='button' value='Send Request' />
+                <p>I will reach out to you shortly</p>
+              </div>
+            </div>
+
+            <div className='blurb'>
+              <p>A redisgn of an old site,</p>
+              <p>Or a brand new site.</p>
+              <p>We can manage your site after it is launched.</p>
+            </div>
+
+            <div className='alternativeContact'>
+              <p>You can also reach me at:</p>
+              <div className='altBox'>
+                <img src={''} />
+                <p>Email: sampleemail@gmail.com</p>
+              </div>
+              <div className='altBox'>
+                <img src={''} />
+                <p>Phone: 647-588-3123</p>
+              </div>
+            </div>
+
+          </div>
+
+          {footer()}
+        </>
+      }
 
     </div>
   );
