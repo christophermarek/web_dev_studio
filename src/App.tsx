@@ -89,12 +89,13 @@ function App() {
       {currentPage === 'landing' &&
         <div className="landing" style={{backgroundImage: `url(${landingBackground})`}}>
           <div className="nameHeader">
-            <p>{companyName}</p>
-            <p>Web Development</p>
+            <p id='title'>{companyName}</p>
+            <p id='subTitle'>Web Development</p>
           </div>
           <div className="subText">
-            <p>It begins with an idea.</p>
-            <p>Its not enought to look good, your website needs to drive conversions and engage with your audience.</p>
+            <p id='idea'>It begins with an idea.</p>
+            <p id='middle'>Its not enought to look good, your website needs to drive conversions</p>
+            <p id='bottom'> and engage with your audience.</p>
           </div>
           <input type="button" className="normalButton" onClick={() => setCurrentPage('main')} value="Take me inside" />
         </div>
