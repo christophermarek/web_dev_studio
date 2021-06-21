@@ -1,20 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
 
-$darkColor: #2F2E41;
-$lightColor: #3F3D56;
+$darkColor: #2f2e41;
+$lightColor: #3f3d56;
 $altColor: #786684;
-$contrastColor: #00BFA6;
+$headerLightColor: #54526c;
+$contrastColor: #00bfa6;
 $textColor1: #909090;
-$textColor2: #CCCCCC;
-$textColor3: #FFFFFF;
+$textColor2: #cccccc;
+$textColor3: #ffffff;
 
-
-body{
-  font-family: 'Montserrat', sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $lightColor;
 }
-
-html, body{min-height:100%;}
-body{height:100vh;}
 
 .landing {
   width: 100%;
@@ -23,54 +21,121 @@ body{height:100vh;}
   display: flex;
   flex-direction: column;
   color: $textColor2;
-  text-shadow: 1px 1px 5px #000000;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
-  #title{
+  #title {
     margin-top: 10%;
     font-size: 48px;
     margin-bottom: 0%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
-  #subTitle{
+  #subTitle {
     font-size: 18px;
     margin-bottom: 10%;
   }
 
   .normalButton {
-    font-family: 'Montserrat';
-    margin-left: 43%;
-    margin-right: 43%;
+    font-family: "Montserrat";
+    margin-left: 41%;
+    margin-right: 41%;
     padding: 1%;
     margin-bottom: 10%;
     background-color: $altColor;
     border: none;
     box-shadow: 1px 1px 2px #000000;
-    color: #F5F5F5;
+    color: #f5f5f5;
     font-size: 18px;
   }
 
-  #idea{
+  #idea {
     margin-bottom: 5%;
   }
 
-  #middle{
+  #middle {
     margin-bottom: 0;
   }
 
-  #bottom{
+  #bottom {
     margin-top: 0;
     margin-bottom: 5%;
   }
 
-
-  .subText{
+  .subText {
     font-size: 24px;
   }
-
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .headerLeft {
+    background-color: $headerLightColor;
+    width: 50%;
+    text-align: center;
+    color: $textColor1;
+    font-size: 36px;
+  }
 
+  .headerRight {
+    background-color: $darkColor;
+    width: 50%;
+    align-self: stretch;
+  }
+}
 
+.btnReq {
+  background-color: $contrastColor;
+  border: none;
+  border-radius: 25px;
+  padding: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.blurb {
+  width: 50%;
+  background-color: $darkColor;
+  padding: 5%;
+  border-radius: 47px;
+  color: $textColor3;
+
+  display: flex;
+  flex-direction: column;
+
+  .blurbTitle {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .blurbText {
+    font-size: 18px;
+  }
+}
+
+.mainBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 100%;
+
+  .mainLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

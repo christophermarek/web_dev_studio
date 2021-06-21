@@ -103,7 +103,6 @@ function App() {
 
       {currentPage === 'main' &&
         <>
-          <p>Main Page</p>
           <div className='header'>
             <div className='headerLeft'>
               <p>{companyName}</p>
@@ -132,7 +131,6 @@ function App() {
               </div>
             </div>
           </div>
-
           {footer()}
         </>
       }
