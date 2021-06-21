@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
+
+import buisnessPointing from './assets/buisnessPointing.svg';
+import buildingSite from './assets/buildingSite.svg';
+import webpage from './assets/webpage.svg';
+import email from './assets/email.svg';
+import github from './assets/github.svg';
+import linkedIn from './assets/linkedIn.svg';
+import x from './assets/x.svg';
+import phone from './assets/phone.svg';
+import landingBackground from './assets/Cornered-Stairs.svg';
 
 function App() {
 
   const [currentPage, setCurrentPage] = useState<string>('landing');
+
   const companyName = 'Company Name';
 
   const whatWeDo = {
@@ -63,9 +74,9 @@ function App() {
         <div className='contact'>
           <p>Contact</p>
           <div className='icons'>
-            <img src="" />
-            <img src="" />
-            <img src="" />
+            <img src={email} alt='email icon' />
+            <img src={linkedIn} alt='linkedin icon'/>
+            <img src={github} alt='github icon'/>
           </div>
         </div>
       </div>
@@ -74,9 +85,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" >
       {currentPage === 'landing' &&
-        <div className="landing">
+        <div className="landing" style={{backgroundImage: `url(${landingBackground})`}}>
           <div className="nameHeader">
             <p>{companyName}</p>
             <p>Web Development</p>
@@ -105,18 +116,18 @@ function App() {
             <div className='mainleft'>
               {blurb(whatWeDo)}
               <div className='imageBox'>
-                <img src="" />
+                <img src={buisnessPointing} alt='main pointing to chart' />
               </div>
               {blurb(helpYourBuisnessGrow)}
             </div>
 
             <div className='mainRight'>
               <div className='imageBox'>
-                <img src="" />
+                <img src={buildingSite} alt='man putting components onto site' />
               </div>
               {blurb(howWeHelp)}
               <div className='imageBox'>
-                <img src="" />
+                <img src={webpage} alt='drawing of web page components' />
               </div>
             </div>
           </div>
@@ -126,7 +137,11 @@ function App() {
       }
       {currentPage === 'quote' &&
         <>
-          <div className='contactTop'> </div>
+          <div className='contactTop'>
+            <button onClick={() => setCurrentPage('main')}>
+              <img src={x} />
+            </button>
+          </div>
 
           <div className='contactBody'>
             <p>Contact Us to request a quote:</p>
@@ -148,11 +163,11 @@ function App() {
             <div className='alternativeContact'>
               <p>You can also reach me at:</p>
               <div className='altBox'>
-                <img src={''} />
+                <img src={email} alt='email icon'/>
                 <p>Email: sampleemail@gmail.com</p>
               </div>
               <div className='altBox'>
-                <img src={''} />
+                <img src={phone} alt='phone icon'/>
                 <p>Phone: 647-588-3123</p>
               </div>
             </div>
