@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
+import { motion, AnimatePresence } from "framer-motion"
 
 import buisnessPointing from './assets/buisnessPointing.svg';
 import buildingSite from './assets/buildingSite.svg';
@@ -86,20 +87,30 @@ function App() {
 
   return (
     <div className="App" >
-      {currentPage === 'landing' &&
-        <div className="landing" style={{ backgroundImage: `url(${landingBackground})` }}>
-          <div className="nameHeader">
-            <p id='title'>{companyName}</p>
-            <p id='subTitle'>Web Development</p>
-          </div>
-          <div className="subText">
-            <p id='idea'>It begins with an idea.</p>
-            <p id='middle'>Its not enought to look good, your website needs to drive conversions</p>
-            <p id='bottom'> and engage with your audience.</p>
-          </div>
-          <input type="button" className="normalButton" onClick={() => setCurrentPage('main')} value="Take me inside" />
-        </div>
-      }
+      <AnimatePresence>
+
+        {currentPage === 'landing' &&
+          <motion.div className="landing" style={{ backgroundImage: `url(${landingBackground})` }}
+
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+
+          >
+            <div className="nameHeader">
+              <p id='title'>{companyName}</p>
+              <p id='subTitle'>Web Development</p>
+            </div>
+            <div className="subText">
+              <p id='idea'>It begins with an idea.</p>
+              <p id='middle'>Its not enought to look good, your website needs to drive conversions</p>
+              <p id='bottom'> and engage with your audience.</p>
+            </div>
+            <input type="button" className="normalButton" onClick={() => setCurrentPage('main')} value="Take me inside" />
+          </motion.div>
+        }
+      </AnimatePresence>
+
 
       {currentPage === 'main' &&
         <>
@@ -166,11 +177,11 @@ function App() {
             <div className='alternativeContact'>
               <p>You can also reach me at:</p>
               <div className='altBox'>
-                <img src={email} alt='email icon' className='icon'/>
+                <img src={email} alt='email icon' className='icon' />
                 <p>Email: sampleemail@gmail.com</p>
               </div>
               <div className='altBox'>
-                <img src={phone} alt='phone icon' className='icon'/>
+                <img src={phone} alt='phone icon' className='icon' />
                 <p>Phone: 647-588-3123</p>
               </div>
             </div>
