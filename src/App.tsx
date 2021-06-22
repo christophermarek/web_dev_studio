@@ -205,26 +205,54 @@ function App() {
 
           <div className='contactBody'>
             <div className='group'>
-              <p id='largeText'>Contact Us to request a quote:</p>
-              <div className='middleBoxes'>
-                <div className="whatNeedBox">
-                  <p id='describe'>Describe what you need</p>
-                  <div contentEditable={true} className='contactUsInput'> </div>
-                  <div className='sendReq'>
-                    <motion.button className='normalButton' whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}>
-                      Send Request
-                    </motion.button>
-                    <p>I will reach out to you shortly</p>
-                  </div>
-                </div>
+              <p id='largeText'>Contact us to request a quote:</p>
+              {isPortrait ?
+                (
+                  <>
+                    <div className='blurb'>
+                      <p>A redesign of an old site,</p>
+                      <p>Or a brand new site.</p>
+                      <p>We can manage your site after it is launched.</p>
+                    </div>
 
-                <div className='blurb'>
-                  <p>A redesign of an old site,</p>
-                  <p>Or a brand new site.</p>
-                  <p>We can manage your site after it is launched.</p>
-                </div>
-              </div>
+                    <div className="whatNeedBox">
+                      <p id='describe'>Describe what you need</p>
+                      <div contentEditable={true} className='contactUsInput'> </div>
+                      <div className='sendReq'>
+                        <motion.button className='normalButton' whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}>
+                          Send Request
+                        </motion.button>
+                        <p>I will reach out to you shortly</p>
+                      </div>
+                    </div>
+                  </>
+                )
+                :
+                (
+                  <>
+                    <div className='middleBoxes'>
+                      <div className="whatNeedBox">
+                        <p id='describe'>Describe what you need</p>
+                        <div contentEditable={true} className='contactUsInput'> </div>
+                        <div className='sendReq'>
+                          <motion.button className='normalButton' whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}>
+                            Send Request
+                          </motion.button>
+                          <p>I will reach out to you shortly</p>
+                        </div>
+                      </div>
+
+                      <div className='blurb'>
+                        <p>A redesign of an old site,</p>
+                        <p>Or a brand new site.</p>
+                        <p>We can manage your site after it is launched.</p>
+                      </div>
+                    </div>
+                  </>
+                )}
+
             </div>
 
             <div className='alternativeContact'>

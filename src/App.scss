@@ -12,10 +12,11 @@ $textColor3: #ffffff;
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
-
 
 body {
   min-width: fit-content;
@@ -46,7 +47,7 @@ body {
     margin-bottom: 10%;
   }
 
-  .normalButton{
+  .normalButton {
     font-family: "Montserrat";
     background-color: $altColor;
     border: none;
@@ -55,19 +56,17 @@ body {
     font-size: 18px;
   }
 
-  @media (orientation: landscape){
+  @media (orientation: landscape) {
     .normalButton {
       margin-left: 41%;
       margin-right: 41%;
       padding: 1%;
       margin-bottom: 10%;
     }
-
-  
   }
-  
+
   @media (orientation: portrait) {
-    .normalButton{
+    .normalButton {
       padding: 5%;
       width: 50%;
       margin-top: 30%;
@@ -76,7 +75,7 @@ body {
     }
   }
 
-  .normalButton:hover{
+  .normalButton:hover {
     color: $textColor1;
     box-shadow: 1px 1px 2px $textColor1;
   }
@@ -114,7 +113,7 @@ body {
   }
 
   @media (orientation: portrait) {
-    .headerLeft{
+    .headerLeft {
       width: 100%;
     }
   }
@@ -149,13 +148,11 @@ body {
   margin-right: 20%;
   margin-top: 10%;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
 }
 
-.btnReq:hover{
+.btnReq:hover {
   color: white;
   box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
-
 }
 
 .blurb {
@@ -213,22 +210,14 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: content-box;
-    .blurb{
-      //width: 100%;
+    .blurb {
       margin-bottom: 5%;
     }
-
-    .imageBox{
-      //display: none;
-    }
-
-    img{
+    img {
       width: 100%;
     }
   }
 }
-
-
 
 .topMargin {
   margin-top: 2.5%;
@@ -316,7 +305,7 @@ body {
     padding-right: 15%;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
-  .normalButton:hover{
+  .normalButton:hover {
     color: $textColor1;
     box-shadow: 1px 1px 2px $textColor1;
   }
@@ -333,8 +322,8 @@ body {
     font-size: 18px;
     margin-top: 4%;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-
   }
+
   .whatNeedBox {
     font-size: 18px;
     width: 45%;
@@ -346,7 +335,6 @@ body {
   #describe {
     font-size: 24px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-
   }
 
   .contactUsInput {
@@ -361,7 +349,6 @@ body {
     padding: 1%;
     text-align: start;
     box-sizing: border-box;
-
   }
 
   .sendReq {
@@ -370,7 +357,6 @@ body {
     flex-direction: row;
     width: 100%;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-
   }
 
   .alternativeContact {
@@ -392,6 +378,23 @@ body {
       width: 4%;
       margin-right: 1%;
       height: 4%;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .blurb {
+      margin-left: 0;
+      width: 75%;
+    }
+
+    .whatNeedBox {
+      width: 75%;
+      align-items: center;
     }
   }
 }
