@@ -63,12 +63,15 @@ body {
       padding: 1%;
       margin-bottom: 10%;
     }
+
   
   }
   
   @media (orientation: portrait) {
     .normalButton{
+      padding: 5%;
       width: 50%;
+      margin-top: 30%;
       margin-left: 25%;
       margin-bottom: 40%;
     }
@@ -94,6 +97,8 @@ body {
 
   .subText {
     font-size: 24px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
