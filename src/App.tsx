@@ -68,15 +68,15 @@ function App() {
     return (
       <div className='footer'>
         <div className='nameAndDate'>
-          <p>{companyName}</p>
-          <p>2021</p>
+          <p id='title'>{companyName}</p>
+          <p id='date'>2021</p>
         </div>
         <div className='contact'>
-          <p>Contact</p>
+          <p className='noBottomMargin'>Contact</p>
           <div className='icons'>
-            <img src={email} alt='email icon' />
-            <img src={linkedIn} alt='linkedin icon'/>
-            <img src={github} alt='github icon'/>
+            <img src={email} alt='email icon' className='icon' />
+            <img src={linkedIn} alt='linkedin icon' className='icon' />
+            <img src={github} alt='github icon' className='icon' />
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ function App() {
   return (
     <div className="App" >
       {currentPage === 'landing' &&
-        <div className="landing" style={{backgroundImage: `url(${landingBackground})`}}>
+        <div className="landing" style={{ backgroundImage: `url(${landingBackground})` }}>
           <div className="nameHeader">
             <p id='title'>{companyName}</p>
             <p id='subTitle'>Web Development</p>
@@ -108,14 +108,14 @@ function App() {
               <p>{companyName}</p>
             </div>
             <div className='headerRight'>
-              <input type='button' value='Request a quote' onClick={() => setCurrentPage('quote')} className='btnReq' />
+              <input type='button' value='Request a quote' onClick={() => setCurrentPage('quote')} className='btnReq header' />
             </div>
           </div>
 
           <div className="mainBody">
-            <div className='mainleft'>
+            <div className='mainLeft'>
               {blurb(whatWeDo)}
-              <div className='imageBox'>
+              <div className='imageBox topMargin'>
                 <img src={buisnessPointing} alt='main pointing to chart' />
               </div>
               {blurb(helpYourBuisnessGrow)}
@@ -126,7 +126,7 @@ function App() {
                 <img src={buildingSite} alt='man putting components onto site' />
               </div>
               {blurb(howWeHelp)}
-              <div className='imageBox'>
+              <div className='imageBox topMargin'>
                 <img src={webpage} alt='drawing of web page components' />
               </div>
             </div>
@@ -143,30 +143,34 @@ function App() {
           </div>
 
           <div className='contactBody'>
-            <p>Contact Us to request a quote:</p>
-            <div className="what you needBox">
-              <p>Describe what you need</p>
-              <input type='textarea' />
-              <div className='sendReq'>
-                <input type='button' value='Send Request' />
-                <p>I will reach out to you shortly</p>
-              </div>
-            </div>
+            <div className='group'>
+              <p id='largeText'>Contact Us to request a quote:</p>
+              <div className='middleBoxes'>
+                <div className="whatNeedBox">
+                  <p>Describe what you need</p>
+                  <input type='textarea' className='contactUsInput' />
+                  <div className='sendReq'>
+                    <input type='button' value='Send Request' className='normalButton' />
+                    <p>I will reach out to you shortly</p>
+                  </div>
+                </div>
 
-            <div className='blurb'>
-              <p>A redisgn of an old site,</p>
-              <p>Or a brand new site.</p>
-              <p>We can manage your site after it is launched.</p>
+                <div className='blurb'>
+                  <p>A redesign of an old site,</p>
+                  <p>Or a brand new site.</p>
+                  <p>We can manage your site after it is launched.</p>
+                </div>
+              </div>
             </div>
 
             <div className='alternativeContact'>
               <p>You can also reach me at:</p>
               <div className='altBox'>
-                <img src={email} alt='email icon'/>
+                <img src={email} alt='email icon' />
                 <p>Email: sampleemail@gmail.com</p>
               </div>
               <div className='altBox'>
-                <img src={phone} alt='phone icon'/>
+                <img src={phone} alt='phone icon' />
                 <p>Phone: 647-588-3123</p>
               </div>
             </div>

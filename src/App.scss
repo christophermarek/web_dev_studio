@@ -84,20 +84,35 @@ body {
     background-color: $darkColor;
     width: 50%;
     align-self: stretch;
+    display: flex;
+    align-items: center;
+  }
+
+  .btnReq {
+    margin: 0;
+    margin-left: 25%;
+    margin-right: 25%;
+    //i have to do this to center the text for some reason
+    display: flex;
+    justify-content: center;
   }
 }
 
 .btnReq {
   background-color: $contrastColor;
   border: none;
+  font-size: 18px;
   border-radius: 25px;
   padding: 2%;
   padding-left: 2%;
   padding-right: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
 }
 
 .blurb {
-  width: 50%;
+  width: 70%;
   background-color: $darkColor;
   padding: 5%;
   border-radius: 47px;
@@ -105,12 +120,13 @@ body {
 
   display: flex;
   flex-direction: column;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
   .blurbTitle {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 24px;
     font-weight: 500;
   }
@@ -125,17 +141,132 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 2%;
-  margin-left: 2%;
   width: 100%;
+  align-items: flex-start;
 
   .mainLeft {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .mainRight {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.imageBox {
+  margin-bottom: -1%;
+  z-index: 100;
+  position: relative;
+}
+
+.topMargin {
+  margin-top: 2.5%;
+}
+
+.footer {
+  background-color: $darkColor;
+  color: $textColor1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .nameAndDate {
+    margin-left: 10%;
+  }
+
+  .contact {
+    margin-right: 3%;
+    text-align: center;
+  }
+
+  .icon {
+    width: 25%;
+    height: 25%;
+  }
+
+  #title {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  #date {
+    margin-top: 1%;
+    font-size: 18px;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.noBottomMargin {
+  margin-bottom: 0;
+}
+
+.contactTop {
+  background-color: $darkColor;
+  width: 100%;
+
+  button {
+    background-color: $darkColor;
+    border: none;
+    padding: 1%;
+  }
+}
+
+.contactBody {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: $textColor1;
+
+  .middleBoxes {
+    //when i make this display flex it pulls up the footer idk why
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .normalButton {
+    border: none;
+    background-color: $altColor;
+    color: $textColor3;
+    padding: 2%;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  #largeText {
+    font-size: 36px;
+  }
+
+  .blurb {
+    color: $textColor1;
+    width: 50%;
+    font-size: 18px;
+  }
+  .whatNeedBox {
+    font-size: 18px;
+    width: 50%;
+  }
+
+  .contactUsInput{
+    
+  }
+
+  .sendReq {
+    display: flex;
+    flex-direction: row;
   }
 }
