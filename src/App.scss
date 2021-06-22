@@ -56,30 +56,7 @@ body {
     font-size: 18px;
   }
 
-  @media (orientation: landscape) {
-    .normalButton {
-      margin-left: 41%;
-      margin-right: 41%;
-      padding: 1%;
-      margin-bottom: 10%;
-    }
-  }
-
-  @media (orientation: portrait) {
-    .normalButton {
-      padding: 5%;
-      width: 50%;
-      margin-top: 30%;
-      margin-left: 25%;
-      margin-bottom: 40%;
-    }
-  }
-
-  .normalButton:hover {
-    color: $textColor1;
-    box-shadow: 1px 1px 2px $textColor1;
-  }
-
+  
   #idea {
     margin-bottom: 5%;
   }
@@ -98,6 +75,43 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  @media (orientation: landscape) {
+    .normalButton {
+      margin-left: 41%;
+      margin-right: 41%;
+      padding: 1%;
+      margin-bottom: 10%;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .normalButton {
+      padding: 5%;
+      width: 50%;
+      margin-top: 15%;
+      margin-left: 25%;
+      margin-bottom: 40%;
+    }
+    #title{
+      padding: 3%;
+    }
+    #middle {
+      padding: 5%;
+    }
+  
+    #bottom {
+      margin-top: 0;
+      margin-bottom: 5%;
+    }
+  
+  }
+
+  .normalButton:hover {
+    color: $textColor1;
+    box-shadow: 1px 1px 2px $textColor1;
+  }
+
 }
 
 .header {

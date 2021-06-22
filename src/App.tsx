@@ -12,6 +12,8 @@ import x from './assets/iconmonstr-arrow-64.svg';
 import phone from './assets/phone.svg';
 import landingBackground from './assets/Cornered-Stairs.svg';
 
+import { Footer } from './components/Footer';
+
 function App() {
 
   const [currentPage, setCurrentPage] = useState<string>('landing');
@@ -69,31 +71,7 @@ function App() {
     )
   }
 
-  const footer = () => {
-
-    return (
-      <div className='footer'>
-        <div className='nameAndDate'>
-          <p id='title'>{companyName}</p>
-          <p id='date'>2021</p>
-        </div>
-        <div className='contact'>
-          <p className='noBottomMargin'>Contact</p>
-          <div className='icons'>
-            <AnimatePresence>
-              <motion.img src={email} alt='email icon' className='icon' whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }} />
-              <motion.img src={linkedIn} alt='linkedin icon' className='icon' whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }} />
-              <motion.img src={github} alt='github icon' className='icon' whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }} />
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
-    )
-
-  }
+  
 
   return (
     <div className="App" >
@@ -118,8 +96,7 @@ function App() {
             </div>
             <div className="subText">
               <p id='idea'>It begins with an idea.</p>
-              <p id='middle'>Its not enought to look good, your website needs to drive conversions</p>
-              <p id='bottom'> and engage with your audience.</p>
+              <p id='middle'>Its not enought to look good, your website needs to drive conversions  and engage with your audience.</p>
             </div>
             <motion.button className="normalButton" onClick={() => setCurrentPage('main')} whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}>
@@ -188,7 +165,7 @@ function App() {
                   </>
                 )}
             </div>
-            {footer()}
+            <Footer companyName={companyName} email={email} github={github} linkedIn={linkedIn}/>
           </motion.div>
         }
       </AnimatePresence>
@@ -269,7 +246,7 @@ function App() {
 
           </div>
 
-          {footer()}
+            <Footer companyName={companyName} email={email} github={github} linkedIn={linkedIn}/>
         </>
       }
 
