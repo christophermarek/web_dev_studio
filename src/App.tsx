@@ -147,8 +147,8 @@ function App() {
               <p id='largeText'>Contact Us to request a quote:</p>
               <div className='middleBoxes'>
                 <div className="whatNeedBox">
-                  <p>Describe what you need</p>
-                  <input type='textarea' className='contactUsInput' />
+                  <p id='describe'>Describe what you need</p>
+                  <div contentEditable={true} className='contactUsInput'> </div>
                   <div className='sendReq'>
                     <input type='button' value='Send Request' className='normalButton' />
                     <p>I will reach out to you shortly</p>
@@ -166,11 +166,11 @@ function App() {
             <div className='alternativeContact'>
               <p>You can also reach me at:</p>
               <div className='altBox'>
-                <img src={email} alt='email icon' />
+                <img src={email} alt='email icon' className='icon'/>
                 <p>Email: sampleemail@gmail.com</p>
               </div>
               <div className='altBox'>
-                <img src={phone} alt='phone icon' />
+                <img src={phone} alt='phone icon' className='icon'/>
                 <p>Phone: 647-588-3123</p>
               </div>
             </div>

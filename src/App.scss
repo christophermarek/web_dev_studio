@@ -242,31 +242,86 @@ body {
     border: none;
     background-color: $altColor;
     color: $textColor3;
-    padding: 2%;
     font-size: 18px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-right: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
   }
 
   #largeText {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-size: 36px;
   }
 
   .blurb {
+    margin-left: 10%;
     color: $textColor1;
-    width: 50%;
+    width: 40%;
     font-size: 18px;
+    margin-top: 4%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
   }
   .whatNeedBox {
     font-size: 18px;
-    width: 50%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .contactUsInput{
-    
+  #describe {
+    font-size: 24px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  }
+
+  .contactUsInput {
+    background-color: $darkColor;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 250px;
+    overflow-y: auto;
+    white-space: wrap;
+    padding-bottom: 35%;
+    padding: 1%;
+    text-align: start;
+    box-sizing: border-box;
+
   }
 
   .sendReq {
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
+    width: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  }
+
+  .alternativeContact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+
+    .altBox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+    }
+
+    .icon {
+      width: 4%;
+      margin-right: 1%;
+      height: 4%;
+    }
   }
 }
