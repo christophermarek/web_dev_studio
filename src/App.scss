@@ -114,6 +114,12 @@ body {
     font-size: 36px;
   }
 
+  @media (orientation: portrait) {
+    .headerLeft{
+      width: 100%;
+    }
+  }
+
   .headerRight {
     background-color: $darkColor;
     width: 50%;
@@ -197,13 +203,28 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+  .imageBox {
+    margin-bottom: -1%;
+    z-index: 100;
+    position: relative;
+  }
+
+  @media (orientation: portrait) {
+    flex-direction: column;
+    align-items: center;
+    .blurb{
+      //width: 100%;
+      margin-bottom: 5%;
+    }
+
+    .imageBox{
+      overflow: hidden;
+    }
+  }
 }
 
-.imageBox {
-  margin-bottom: -1%;
-  z-index: 100;
-  position: relative;
-}
+
 
 .topMargin {
   margin-top: 2.5%;

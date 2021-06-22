@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { motion, AnimatePresence } from "framer-motion"
-
+import { useMediaQuery } from 'react-responsive'
 import buisnessPointing from './assets/buisnessPointing.svg';
 import buildingSite from './assets/buildingSite.svg';
 import webpage from './assets/webpage.svg';
@@ -17,6 +17,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState<string>('landing');
 
   const companyName = 'Company Name';
+
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
   const whatWeDo = {
     title: 'What we do',
@@ -86,7 +88,6 @@ function App() {
               <motion.img src={github} alt='github icon' className='icon' whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }} />
             </AnimatePresence>
-
           </div>
         </div>
       </div>
@@ -139,32 +140,53 @@ function App() {
               <div className='headerLeft'>
                 <p>{companyName}</p>
               </div>
-              <div className='headerRight'>
-                <motion.button onClick={() => setCurrentPage('quote')} className='btnReq header' whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}>
-                  Request a quote
-                </motion.button>
-              </div>
+              {!isPortrait &&
+                <div className='headerRight'>
+                  <motion.button onClick={() => setCurrentPage('quote')} className='btnReq header' whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}>
+                    Request a quote
+                  </motion.button>
+                </div>
+              }
             </div>
 
             <div className="mainBody">
-              <div className='mainLeft'>
-                {blurb(whatWeDo)}
-                <div className='imageBox topMargin'>
-                  <img src={buisnessPointing} alt='main pointing to chart' />
-                </div>
-                {blurb(helpYourBuisnessGrow)}
-              </div>
+              {isPortrait ?
+                (
+                  <>
+                    {blurb(whatWeDo)}
+                    <div className='imageBox'>
+                      <img src={buildingSite} alt='man putting components onto site' />
+                    </div>
+                    {blurb(howWeHelp)}
+                    <div className='imageBox topMargin'>
+                      <img src={webpage} alt='drawing of web page components' />
+                    </div>
+                    {blurb(helpYourBuisnessGrow)}
+                  </>
+                )
+                :
+                (
+                  <>
+                    <div className='mainLeft'>
+                      {blurb(whatWeDo)}
+                      <div className='imageBox topMargin'>
+                        <img src={buisnessPointing} alt='main pointing to chart' />
+                      </div>
+                      {blurb(helpYourBuisnessGrow)}
+                    </div>
 
-              <div className='mainRight'>
-                <div className='imageBox'>
-                  <img src={buildingSite} alt='man putting components onto site' />
-                </div>
-                {blurb(howWeHelp)}
-                <div className='imageBox topMargin'>
-                  <img src={webpage} alt='drawing of web page components' />
-                </div>
-              </div>
+                    <div className='mainRight'>
+                      <div className='imageBox'>
+                        <img src={buildingSite} alt='man putting components onto site' />
+                      </div>
+                      {blurb(howWeHelp)}
+                      <div className='imageBox topMargin'>
+                        <img src={webpage} alt='drawing of web page components' />
+                      </div>
+                    </div>
+                  </>
+                )}
             </div>
             {footer()}
           </motion.div>
