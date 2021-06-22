@@ -8,7 +8,7 @@ import webpage from './assets/webpage.svg';
 import email from './assets/email.svg';
 import github from './assets/github.svg';
 import linkedIn from './assets/linkedIn.svg';
-import x from './assets/x.svg';
+import x from './assets/iconmonstr-arrow-64.svg';
 import phone from './assets/phone.svg';
 import landingBackground from './assets/Cornered-Stairs.svg';
 
@@ -58,7 +58,10 @@ function App() {
         )}
 
         {textValues.title === 'Help your buisness grow' &&
-          <input type='button' value='Request a quote' onClick={() => setCurrentPage('quote')} className='btnReq' />
+          <motion.button onClick={() => setCurrentPage('quote')} className='btnReq' whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}>
+            Request a quote
+          </motion.button>
         }
       </div>
     )
@@ -75,9 +78,15 @@ function App() {
         <div className='contact'>
           <p className='noBottomMargin'>Contact</p>
           <div className='icons'>
-            <img src={email} alt='email icon' className='icon' />
-            <img src={linkedIn} alt='linkedin icon' className='icon' />
-            <img src={github} alt='github icon' className='icon' />
+            <AnimatePresence>
+              <motion.img src={email} alt='email icon' className='icon' whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }} />
+              <motion.img src={linkedIn} alt='linkedin icon' className='icon' whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }} />
+              <motion.img src={github} alt='github icon' className='icon' whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }} />
+            </AnimatePresence>
+
           </div>
         </div>
       </div>
@@ -91,11 +100,16 @@ function App() {
 
         {currentPage === 'landing' &&
           <motion.div className="landing" style={{ backgroundImage: `url(${landingBackground})` }}
-
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-
+            exit={{
+              opacity: 0,
+              zIndex: 0,
+              y: -1000,
+              transition: {
+                duration: 0.5
+              }
+            }}
           >
             <div className="nameHeader">
               <p id='title'>{companyName}</p>
@@ -106,50 +120,64 @@ function App() {
               <p id='middle'>Its not enought to look good, your website needs to drive conversions</p>
               <p id='bottom'> and engage with your audience.</p>
             </div>
-            <input type="button" className="normalButton" onClick={() => setCurrentPage('main')} value="Take me inside" />
+            <motion.button className="normalButton" onClick={() => setCurrentPage('main')} whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}>
+              Take me inside
+            </motion.button>
           </motion.div>
         }
       </AnimatePresence>
 
-
-      {currentPage === 'main' &&
-        <>
-          <div className='header'>
-            <div className='headerLeft'>
-              <p>{companyName}</p>
-            </div>
-            <div className='headerRight'>
-              <input type='button' value='Request a quote' onClick={() => setCurrentPage('quote')} className='btnReq header' />
-            </div>
-          </div>
-
-          <div className="mainBody">
-            <div className='mainLeft'>
-              {blurb(whatWeDo)}
-              <div className='imageBox topMargin'>
-                <img src={buisnessPointing} alt='main pointing to chart' />
+      <AnimatePresence>
+        {currentPage === 'main' &&
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className='header'>
+              <div className='headerLeft'>
+                <p>{companyName}</p>
               </div>
-              {blurb(helpYourBuisnessGrow)}
-            </div>
-
-            <div className='mainRight'>
-              <div className='imageBox'>
-                <img src={buildingSite} alt='man putting components onto site' />
-              </div>
-              {blurb(howWeHelp)}
-              <div className='imageBox topMargin'>
-                <img src={webpage} alt='drawing of web page components' />
+              <div className='headerRight'>
+                <motion.button onClick={() => setCurrentPage('quote')} className='btnReq header' whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}>
+                  Request a quote
+                </motion.button>
               </div>
             </div>
-          </div>
-          {footer()}
-        </>
-      }
+
+            <div className="mainBody">
+              <div className='mainLeft'>
+                {blurb(whatWeDo)}
+                <div className='imageBox topMargin'>
+                  <img src={buisnessPointing} alt='main pointing to chart' />
+                </div>
+                {blurb(helpYourBuisnessGrow)}
+              </div>
+
+              <div className='mainRight'>
+                <div className='imageBox'>
+                  <img src={buildingSite} alt='man putting components onto site' />
+                </div>
+                {blurb(howWeHelp)}
+                <div className='imageBox topMargin'>
+                  <img src={webpage} alt='drawing of web page components' />
+                </div>
+              </div>
+            </div>
+            {footer()}
+          </motion.div>
+        }
+      </AnimatePresence>
       {currentPage === 'quote' &&
         <>
           <div className='contactTop'>
             <button onClick={() => setCurrentPage('main')}>
-              <img src={x} />
+              <AnimatePresence>
+                <motion.img src={x} alt='back button icon' whileHover={{ scale: 1.5 }}
+                  whileTap={{ scale: 0.9 }} />
+              </AnimatePresence>
             </button>
           </div>
 
@@ -161,7 +189,10 @@ function App() {
                   <p id='describe'>Describe what you need</p>
                   <div contentEditable={true} className='contactUsInput'> </div>
                   <div className='sendReq'>
-                    <input type='button' value='Send Request' className='normalButton' />
+                    <motion.button className='normalButton' whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}>
+                      Send Request
+                    </motion.button>
                     <p>I will reach out to you shortly</p>
                   </div>
                 </div>
