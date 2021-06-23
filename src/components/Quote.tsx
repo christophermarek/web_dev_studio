@@ -1,6 +1,3 @@
-import buisnessPointing from '../assets/buisnessPointing.svg';
-import buildingSite from '../assets/buildingSite.svg';
-import webpage from '../assets/webpage.svg';
 import { motion, AnimatePresence } from "framer-motion"
 
 import { Footer } from './Footer';
