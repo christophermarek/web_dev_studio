@@ -1,4 +1,5 @@
-import { motion } from "framer-motion"
+import '../styles/landing.scss';
+import { motion } from "framer-motion";
 
 interface LandingProps {
     companyName: string,

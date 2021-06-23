@@ -1,3 +1,4 @@
+import '../styles/main.scss';
 import buisnessPointing from '../assets/buisnessPointing.svg';
 import buildingSite from '../assets/buildingSite.svg';
 import webpage from '../assets/webpage.svg';

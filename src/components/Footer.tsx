@@ -1,3 +1,5 @@
+import '../styles/footer.scss';
+
 import { motion, AnimatePresence } from "framer-motion"
 
 interface FooterProps {
