@@ -68,7 +68,7 @@ const whatWeDo = {
 
 export const Main: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, email, linkedIn, github }) => {
 
-    companyName = `${companyName} Web Development`;
+    companyName = `${companyName}`;
     
     return (
         <motion.div

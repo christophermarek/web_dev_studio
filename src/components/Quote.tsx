@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion"
+import React, { useEffect } from 'react';
 
 import { Footer } from './Footer';
 
@@ -11,13 +12,17 @@ interface QuoteProps {
     email: string,
     linkedIn: string,
     github: string,
-    phone: string, 
+    phone: string,
     x: string
 }
 
 export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurrentPage, email, linkedIn, github, phone, x }) => {
 
-    companyName = `${companyName} Web Development`;
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    companyName = `${companyName} Website Development`;
 
     return (
         <>

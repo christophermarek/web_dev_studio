@@ -24,7 +24,7 @@ export const Landing: React.FC<LandingProps> = ({ companyName, landingBackground
         >
             <div className="nameHeader">
                 <p id='title'>{companyName}</p>
-                <p id='subTitle'>Web Development</p>
+                <p id='subTitle'>Website Development</p>
             </div>
             <div className="subText">
                 <p id='idea'>It begins with an idea.</p>
