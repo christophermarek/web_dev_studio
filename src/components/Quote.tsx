@@ -95,7 +95,7 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
                     </div>
                     <div className='altBox'>
                         <img src={phone} alt='phone icon' className='icon' />
-                        <p>Phone: 647-588-3123</p>
+                        <p>Phone: (647) 697-1641 Call or Text</p>
                     </div>
                 </div>
 
