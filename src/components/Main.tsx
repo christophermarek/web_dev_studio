@@ -68,6 +68,8 @@ const whatWeDo = {
 
 export const Main: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, email, linkedIn, github }) => {
 
+    companyName = `${companyName} Web Development`;
+    
     return (
         <motion.div
             initial={{ opacity: 0 }}

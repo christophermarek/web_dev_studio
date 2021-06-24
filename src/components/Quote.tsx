@@ -17,6 +17,8 @@ interface QuoteProps {
 
 export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurrentPage, email, linkedIn, github, phone, x }) => {
 
+    companyName = `${companyName} Web Development`;
+
     return (
         <>
             <div className='contactTop'>

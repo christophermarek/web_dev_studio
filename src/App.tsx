@@ -18,26 +18,31 @@ function App() {
 
   const [currentPage, setCurrentPage] = useState<string>('landing');
 
-  const companyName = 'Company Name';
+  const companyName = 'Romulo Studios';
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
   return (
     <div className="App" >
       <AnimatePresence>
         {currentPage === 'landing' &&
-         <Landing companyName={companyName} setCurrentPage={setCurrentPage} landingBackground={landingBackground}/>
+          <>
+            <Landing companyName={companyName} setCurrentPage={setCurrentPage} landingBackground={landingBackground} />
+          </>
         }
       </AnimatePresence>
 
       <AnimatePresence>
         {currentPage === 'main' &&
-          <Main companyName={companyName} isPortrait={isPortrait} setCurrentPage={setCurrentPage} email={email} linkedIn={linkedIn} github={github}/>
+          <>
+            <Main companyName={companyName} isPortrait={isPortrait} setCurrentPage={setCurrentPage} email={email} linkedIn={linkedIn} github={github} />
+          </>
         }
       </AnimatePresence>
       {currentPage === 'quote' &&
-        <Quote companyName={companyName} isPortrait={isPortrait} setCurrentPage={setCurrentPage} email={email} linkedIn={linkedIn} github={github} phone={phone} x={x}/>
+        <>
+          <Quote companyName={companyName} isPortrait={isPortrait} setCurrentPage={setCurrentPage} email={email} linkedIn={linkedIn} github={github} phone={phone} x={x} />
+        </>
       }
-
     </div>
   );
 }
