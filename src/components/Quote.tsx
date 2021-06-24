@@ -22,7 +22,7 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
         window.scrollTo(0, 0)
     }, [])
 
-    companyName = `${companyName} Website Development`;
+    companyName = `${companyName}`;
 
     return (
         <>
@@ -91,7 +91,7 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
                     <p>You can also reach me at:</p>
                     <div className='altBox'>
                         <img src={email} alt='email icon' className='icon' />
-                        <p>Email: sampleemail@gmail.com</p>
+                        <p>Email: chris@webgineer.ca</p>
                     </div>
                     <div className='altBox'>
                         <img src={phone} alt='phone icon' className='icon' />

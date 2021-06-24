@@ -14,14 +14,14 @@ export const Footer: React.FC<FooterProps> = ({ companyName, email, linkedIn, gi
     return (
         <div className='footer'>
             <div className='nameAndDate'>
-                <p id='title'>{companyName}</p>
+                <p id='title'>{companyName} Website Development</p>
                 <p id='date'>2021</p>
             </div>
             <div className='contact'>
                 <p className='noBottomMargin'>Contact</p>
                 <div className='icons'>
                     <AnimatePresence>
-                        <a href='https://mail.google.com/' target="_blank" rel="noreferrer" className='aTag'>
+                        <a href = "mailto:chris@webgineer.ca?subject=Requesting a quote" target="_blank" rel="noreferrer" className='aTag'>
                             <motion.img src={email} alt='email icon' className='icon' whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }} />
                         </a>
