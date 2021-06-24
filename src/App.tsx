@@ -18,7 +18,7 @@ function App() {
 
   const [currentPage, setCurrentPage] = useState<string>('landing');
 
-  const companyName = 'Romulo Studios';
+  const companyName = 'Webgineer';
   const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
 
   return (
