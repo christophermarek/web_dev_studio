@@ -22,7 +22,7 @@ export default function Home() {
           <meta name="description" content="Website Development" />
           <meta property="og:url" content="https://webgineer.ca/" />
           <meta property="og:title" content="Webgineer" />
-          <meta property="og:description" content="Web Developer Studio" />
+          <meta property="og:description" content="Web Development Studio" />
           <meta property="og:site_name" content="Website Development" />
           <meta property="og:image" content="https://webgineer.ca/public/android-chrome-512x512.png" />
           <meta property="fb:app_id" content="000000" />
