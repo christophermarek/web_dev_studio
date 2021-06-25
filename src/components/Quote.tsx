@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion"
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Footer } from './Footer';
 
@@ -17,12 +17,23 @@ interface QuoteProps {
 }
 
 export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurrentPage, email, linkedIn, github, phone, x }) => {
+    const inputEl = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
     companyName = `${companyName}`;
+
+    const sendRequest = () => {
+        if (inputEl != null) {
+            if (inputEl.current != null) {
+                //console.log(inputEl.current.innerText);
+                window.open(`mailto:chris@webgineer.ca?subject=Requesting a Quote&body=${inputEl.current.innerText}`)
+            }
+        }
+    }
+
 
     return (
         <>
@@ -49,9 +60,9 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
 
                                 <div className="whatNeedBox">
                                     <p id='describe'>Describe what you need</p>
-                                    <div contentEditable={true} className='contactUsInput'> </div>
+                                    <div contentEditable={true} className='contactUsInput' suppressContentEditableWarning={true}> </div>
                                     <div className='sendReq'>
-                                        <motion.button className='normalButton' whileHover={{ scale: 1.1 }}
+                                        <motion.button className='normalButton' onClick={sendRequest} whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.9 }}>
                                             Send Request
                                         </motion.button>
@@ -66,10 +77,10 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
                                 <div className='middleBoxes'>
                                     <div className="whatNeedBox">
                                         <p id='describe'>Describe what you need</p>
-                                        <div contentEditable={true} className='contactUsInput'> </div>
+                                        <div contentEditable={true} className='contactUsInput' suppressContentEditableWarning={true} ref={inputEl}> </div>
                                         <div className='sendReq'>
                                             <motion.button className='normalButton' whileHover={{ scale: 1.1 }}
-                                                whileTap={{ scale: 0.9 }}>
+                                                whileTap={{ scale: 0.9 }} onClick={sendRequest}>
                                                 Send Request
                                             </motion.button>
                                             <p>I will reach out to you shortly</p>
