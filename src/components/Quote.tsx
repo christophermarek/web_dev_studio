@@ -34,7 +34,6 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
         }
     }
 
-
     return (
         <>
             <div className='contactTop'>
@@ -60,7 +59,7 @@ export const Quote: React.FC<QuoteProps> = ({ companyName, isPortrait, setCurren
 
                                 <div className="whatNeedBox">
                                     <p id='describe'>Describe what you need</p>
-                                    <div contentEditable={true} className='contactUsInput' suppressContentEditableWarning={true}> </div>
+                                    <div contentEditable={true} className='contactUsInput' suppressContentEditableWarning={true} ref={inputEl}> </div>
                                     <div className='sendReq'>
                                         <motion.button className='normalButton' onClick={sendRequest} whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.9 }}>
