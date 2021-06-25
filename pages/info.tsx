@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-
+import { useMediaQuery } from 'react-responsive';
 import { motion } from "framer-motion";
 import { Footer } from '../components/footer';
-
+import Link from 'next/link'
 
 
 interface MainProps {
@@ -45,7 +46,7 @@ interface blurbText {
     text: string[]
 }
 
-const blurb = (textValues: blurbText, setCurrentPage: React.Dispatch<React.SetStateAction<string>>) => {
+const blurb = (textValues: blurbText) => {
     return (
         <div className='blurb'>
             <p className='blurbTitle'>{textValues.title}</p>
@@ -54,18 +55,24 @@ const blurb = (textValues: blurbText, setCurrentPage: React.Dispatch<React.SetSt
             )}
 
             {textValues.title === 'Help your buisness grow' &&
-                <motion.button onClick={() => setCurrentPage('quote')} className='btnReq' whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}>
-                    Request a quote
-                </motion.button>
+                <Link href='quote'>
+                    <motion.button className='btnReq' whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}>
+                        Request a quote
+                    </motion.button>
+                </Link>
             }
         </div>
     )
 }
 
-const info: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, email, linkedIn, github }) => {
+const Info: React.FC<MainProps> = ({ }) => {
 
-    companyName = `${companyName}`;
+    const companyName = 'Webgineer';
+    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+    const email = '/assets/email.svg';
+    const github = '/assets/github.svg';
+    const linkedIn = '/assets/linkedIn.svg';
 
     return (
         <motion.div
@@ -79,15 +86,7 @@ const info: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, em
                     duration: 0.5
                 }
             }}
-            exit={{
-                opacity: 0,
-                zIndex: 0,
-                y: -1000,
-                scaleX: 0,
-                transition: {
-                    duration: 2
-                }
-            }}
+
         >
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet" />
@@ -99,10 +98,12 @@ const info: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, em
                 </div>
                 {!isPortrait &&
                     <div className='headerRight'>
-                        <motion.button onClick={() => setCurrentPage('quote')} className='btnReq header' whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}>
-                            Request a quote
-                        </motion.button>
+                        <Link href={`quote`}>
+                            <motion.button onClick={() => true} className='btnReq header' whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}>
+                                Request a quote
+                            </motion.button>
+                        </Link>
                     </div>
                 }
             </div>
@@ -111,33 +112,33 @@ const info: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, em
                 {isPortrait ?
                     (
                         <>
-                            {blurb(whatWeDo, setCurrentPage)}
+                            {blurb(whatWeDo)}
                             <div className='imageBox'>
                                 <img src={'./assets/buildingSite.svg'} alt='man putting components onto site' />
                             </div>
-                            {blurb(howWeHelp, setCurrentPage)}
+                            {blurb(howWeHelp)}
                             <div className='imageBox topMargin'>
                                 <img src={'./assets/webpage.svg'} alt='drawing of web page components' />
                             </div>
-                            {blurb(helpYourBuisnessGrow, setCurrentPage)}
+                            {blurb(helpYourBuisnessGrow)}
                         </>
                     )
                     :
                     (
                         <>
                             <div className='mainLeft'>
-                                {blurb(whatWeDo, setCurrentPage)}
+                                {blurb(whatWeDo)}
                                 <div className='imageBox topMargin'>
                                     <img src={'./assets/buisnessPointing.svg'} alt='main pointing to chart' />
                                 </div>
-                                {blurb(helpYourBuisnessGrow, setCurrentPage)}
+                                {blurb(helpYourBuisnessGrow)}
                             </div>
 
                             <div className='mainRight'>
                                 <div className='imageBox'>
                                     <img src={'./assets/buildingSite.svg'} alt='man putting components onto site' />
                                 </div>
-                                {blurb(howWeHelp, setCurrentPage)}
+                                {blurb(howWeHelp)}
                                 <div className='imageBox topMargin'>
                                     <img src={'./assets/webpage.svg'} alt='drawing of web page components' />
                                 </div>
@@ -150,4 +151,4 @@ const info: React.FC<MainProps> = ({ companyName, isPortrait, setCurrentPage, em
     )
 }
 
-export default info;
+export default Info;

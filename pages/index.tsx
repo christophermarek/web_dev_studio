@@ -12,15 +12,7 @@ export default function Home() {
       <motion.div className={`landing`} style={{ backgroundImage: `url(./assets/Cornered-Stairs.svg)` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{
-          opacity: 0,
-          zIndex: 0,
-          y: -1000,
-          scaleX: 0,
-          transition: {
-            duration: 2
-          }
-        }}
+        
       >
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet" />
