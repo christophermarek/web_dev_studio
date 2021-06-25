@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Footer } from '../components/footer';
 import Head from 'next/head'
+import Link from 'next/link'
 
 
 interface QuoteProps {
@@ -50,8 +51,11 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
             <div className='contactTop'>
                 <button onClick={() => true}>
                     <AnimatePresence>
-                        <motion.img src={x} alt='back button icon' whileHover={{ scale: 1.5 }}
-                            whileTap={{ scale: 0.9 }} />
+                        <Link
+                            href='info'>
+                            <motion.img src={x} alt='back button icon' whileHover={{ scale: 1.5 }}
+                                whileTap={{ scale: 0.9 }} />
+                        </Link>
                     </AnimatePresence>
                 </button>
             </div>
