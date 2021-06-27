@@ -18,8 +18,8 @@ interface MainProps {
 const whatWeDo = {
     title: 'What we do',
     text: [
-        'Help you design and build a website for your buisness needs.',
-        'Your buisness needs a responsive and beautiful site.',
+        'Help you design and build a website for your buisness.',
+        'Your buisness needs a responsive site.',
         'We offer domain registration, and hosting. So that your buisness doesnt have to worry about site upkeep.'
     ]
 }
@@ -28,8 +28,8 @@ const howWeHelp = {
     title: 'How we help you reach more customers',
     text: [
         'Bring your companies website to the front of peoples searches.',
-        'SEO to bring you to the front page of google searches (no idea how to do this btw).',
-        'We offer analytics so you can monitor user engagement on your site. (this i can do easy).'
+        'SEO to bring you to the front page of google searches.',
+        'Analytics to monitor user engagement on your site.'
     ]
 }
 
