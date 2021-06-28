@@ -6,7 +6,6 @@ import { Footer } from '../components/footer';
 import Head from 'next/head'
 import Link from 'next/link'
 
-
 interface QuoteProps {
 
 }
@@ -30,7 +29,6 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
     const sendRequest = () => {
         if (inputEl != null) {
             if (inputEl.current != null) {
-                //console.log(inputEl.current.innerText);
                 window.open(`mailto:chris@webgineer.ca?subject=Requesting a Quote&body=${inputEl.current.innerText}`)
             }
         }
@@ -42,7 +40,6 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
             animate={{
                 opacity: 1,
             }}
-
         >
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet" />
@@ -83,7 +80,7 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
                                 <div className='blurb'>
                                     <p>A redesign of an old site,</p>
                                     <p>Or a brand new site.</p>
-                                    <p>We can manage your site after it is launched.</p>
+                                    <p>We can host and manage your site after it is launched.</p>
                                 </div>
 
                                 <div className="whatNeedBox">
@@ -118,7 +115,7 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
                                     <div className='blurb'>
                                         <p>A redesign of an old site,</p>
                                         <p>Or a brand new site.</p>
-                                        <p>We can manage your site after it is launched.</p>
+                                        <p>We can host and manage your site after it is launched.</p>
                                     </div>
                                 </div>
                             </>

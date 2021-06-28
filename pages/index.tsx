@@ -37,8 +37,8 @@ export default function Home() {
           <p id='subTitle'>Website Development</p>
         </div>
         <div className="subText">
-          <p id='idea'>It begins with an idea.</p>
-          <p id='middle'>Its not enought to look good, your website needs to drive conversions  and engage with your audience.</p>
+          <p id='idea'>Bring your company the online attention it deserves.</p>
+          <p id='middle'>It's not enough to look good, your website needs to drive conversions and engage with your audience.</p>
         </div>
 
         <Link href={`info`}>
