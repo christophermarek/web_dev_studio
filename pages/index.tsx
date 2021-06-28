@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className="subText">
           <p id='idea'>Bring your company the online attention it deserves.</p>
-          <p id='middle'>It's not enough to look good, your website needs to drive conversions and engage with your audience.</p>
+          <p id='middle'>{`It's`} not enough to look good, your website needs to drive conversions and engage with your audience.</p>
         </div>
 
         <Link href={`info`}>
