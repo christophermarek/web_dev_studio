@@ -78,8 +78,8 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
                         (
                             <>
                                 <div className='blurb'>
-                                    <p>A redesign of an old site,</p>
-                                    <p>Or a brand new site.</p>
+                                    <p>Whether you are looking to redesign an old site, or create a brand new site.</p>
+                                    <p></p>
                                     <p>We can host and manage your site after it is launched.</p>
                                 </div>
 
@@ -113,8 +113,8 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
                                     </div>
 
                                     <div className='blurb'>
-                                        <p>A redesign of an old site,</p>
-                                        <p>Or a brand new site.</p>
+                                        <p>A redesign of an old site, or a brand new site.</p>
+                                        <p>We can build it.</p>
                                         <p>We can host and manage your site after it is launched.</p>
                                     </div>
                                 </div>
