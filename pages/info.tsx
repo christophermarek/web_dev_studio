@@ -18,8 +18,8 @@ interface MainProps {
 const whatWeDo = {
     title: 'What we do',
     text: [
-        'Help you design and build a website for your buisness.',
-        'Your buisness needs a responsive site.',
+        'A well made website is critical for reaching your customers.',
+        'We can help you design and build websites for your buisness.',
         'We offer domain registration, and hosting. So that your buisness doesnt have to worry about site upkeep.'
     ]
 }
@@ -86,7 +86,6 @@ const Info: React.FC<MainProps> = ({ }) => {
                     duration: 0.5
                 }
             }}
-
         >
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet" />
