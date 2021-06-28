@@ -20,7 +20,7 @@ const whatWeDo = {
     text: [
         'A well made website is critical for reaching your customers.',
         'We can help you design, build, and maintain websites for your buisness.',
-        'With domain registration and hosting.'
+        'We offer services such as domain registration and hosting.'
     ]
 }
 
