@@ -27,9 +27,9 @@ const whatWeDo = {
 const howWeHelp = {
     title: 'How we help you reach more customers',
     text: [
-        'Bring your companies website to the front of peoples searches.',
-        'SEO to bring you to the front page of google searches.',
-        'Analytics to monitor user engagement on your site.'
+        'Bring your company website to the front of people\'s searches.',
+        'We utilize SEO to maximize .',
+        'We offer analytics for your site to monitor user engagement.'
     ]
 }
 
@@ -37,7 +37,7 @@ const helpYourBuisnessGrow = {
     title: 'Help your buisness grow',
     text: [
         'A strong online prescence is important.',
-        'We will create you one',
+        'We will create you one.',
     ]
 }
 
