@@ -91,7 +91,7 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
                                             whileTap={{ scale: 0.9 }}>
                                             Send Request
                                         </motion.button>
-                                        <p>I will reach out to you shortly</p>
+                                        <p>You will recieve a response shortly</p>
                                     </div>
                                 </div>
                             </>
@@ -108,7 +108,7 @@ const Quote: React.FC<QuoteProps> = ({ }) => {
                                                 whileTap={{ scale: 0.9 }} onClick={sendRequest}>
                                                 Send Request
                                             </motion.button>
-                                            <p>I will reach out to you shortly</p>
+                                            <p>You will recieve a response shortly</p>
                                         </div>
                                     </div>
 

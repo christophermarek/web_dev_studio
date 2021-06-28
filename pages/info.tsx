@@ -28,7 +28,7 @@ const howWeHelp = {
     title: 'How we help you reach more customers',
     text: [
         'Bring your company website to the front of people\'s searches.',
-        'We utilize SEO to maximize .',
+        'We utilize SEO to maximize outreach.',
         'We offer analytics for your site to monitor user engagement.'
     ]
 }
